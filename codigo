@@ -1,0 +1,36 @@
+# ejercicio-de-correlacion
+
+//cuantos dias practique golf en los ultimos 10 años
+String ano []={"2005","2006","2007","2008","2009","2010", "2011", "2012", "2013", "2014", "2015"};
+PFont tipo;
+int dias[]={
+  265,300,320,320,320,300,340,330,50,15,3 
+};
+String titulo ="Días jugados en cada año VS torneos por los últimos 10 años";
+int torneos []= {15,10,16,16,16,13,20,24,4,0,0};
+
+void setup(){
+  size(560,730);
+  //toca cargar la fuente, debe tener el tamano de la fuente
+  tipo= loadFont ("TektonPro-BoldCond-20.vlw");
+  //debe coincidir el tamano en ambas
+  textFont (tipo,20);
+}
+
+void draw(){
+  background (0,102,0);
+  
+  for(int cubo =0; cubo< 11; cubo=cubo+1){
+    fill(255);
+    text(ano[cubo], 50, 50+(cubo*60));
+    fill(255,255,0);
+    rect(120, 38+(cubo*60),dias[cubo],10);
+    fill(255);
+    text(dias[cubo],140+ dias[cubo], 50+(cubo*60));
+    fill(44,44,159);
+    text(titulo,80,700);
+    fill(76,0,153);
+    rect(120, 48+(cubo*60),torneos[cubo],10);
+    
+}
+}
